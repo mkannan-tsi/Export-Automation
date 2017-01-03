@@ -1,11 +1,12 @@
-param($FilterParam)
+param($FilterParam, $Filepath)
 
 $Server = ""
+$Site = ""
 $Username = ""
 $Password = ""
 $URL = "Superstore/Overview?Region=$FilterParam"
 $Filetype = "png"
-$Filepath = "C:\Users\mkannan\Desktop\$FilterParam.png"
+$Filepath = $Filepath+$FilterParam+"."+$Filetype
 
-tabcmd login -s $Server -u $Username -p $Password
+tabcmd login -s $Server -t $Site -u $Username -p $Password
 tabcmd export $URL --$Filetype -f $Filepath

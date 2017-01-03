@@ -1,4 +1,5 @@
-file_path = 'C:\Users\mkannan\Desktop\Sample.csv'
+input_file_path = 'C:\Users\mkannan\Desktop\Sample.csv'
+output_file_path = "C:\Users\mkannan\Desktop\\abc\\"
 powershell_path = "C:\WINDOWS\system32\WindowsPowerShell\\v1.0\powershell.exe"
 server_script = ".\"./Server.ps1\""
 blat_script = ".\"./blat.ps1\""
@@ -11,7 +12,7 @@ array_name = []
 array_email = []
 
 #Reading from CSV file
-with open(file_path, 'rb') as csvfile:
+with open(input_file_path, 'rb') as csvfile:
     reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
     count = 0
     
@@ -26,10 +27,9 @@ with open(file_path, 'rb') as csvfile:
 	    count=count+1	
 
 #Reading from Server.ps1 (powershell script)
-for x in xrange(0,len(array_name)):
-	subprocess.call([powershell_path, server_script +" " +array_name[x] + ";"])
+#for x in xrange(0,len(array_name)):
+#	subprocess.call([powershell_path, server_script +" " +array_name[x] +" " + output_file_path + ";"])
 
 #Sending email out through Blat.ps1 (powershell script)
 for x in xrange(0,len(array_name)):
-	subprocess.call([powershell_path, blat_script +array_email[x] +" " +array_name[x] + file_extension + ";"])
-
+	subprocess.call([powershell_path, blat_script +array_email[x] +" " +output_file_path+array_name[x] + file_extension + ";"])
