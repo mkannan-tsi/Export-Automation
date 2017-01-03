@@ -1,8 +1,8 @@
 param($FilterParam, $Filepath)
 
-$Server = ""
-$Site = ""
-$Username = ""
+$Server = "localhost"
+$Site = '""'
+$Username = "mkannan"
 $Password = ""
 $URL = "Superstore/Overview?Region=$FilterParam"
 $Filetype = "png"

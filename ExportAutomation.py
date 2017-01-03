@@ -1,6 +1,6 @@
-input_file_path = 'C:\Users\mkannan\Desktop\Sample.csv'
-output_file_path = "C:\Users\mkannan\Desktop\\abc\\"
-powershell_path = "C:\WINDOWS\system32\WindowsPowerShell\\v1.0\powershell.exe"
+input_file_path = "Sample.csv"
+output_file_path = "C:/abc' '2/" #Ouput file path must exist
+powershell_path = "C:/WINDOWS/system32/WindowsPowerShell/v1.0/powershell.exe"
 server_script = ".\"./Server.ps1\""
 blat_script = ".\"./blat.ps1\""
 file_extension = ".png"
@@ -27,9 +27,9 @@ with open(input_file_path, 'rb') as csvfile:
 	    count=count+1	
 
 #Reading from Server.ps1 (powershell script)
-#for x in xrange(0,len(array_name)):
-#	subprocess.call([powershell_path, server_script +" " +array_name[x] +" " + output_file_path + ";"])
+for x in xrange(0,len(array_name)):
+	subprocess.call([powershell_path, server_script +" " +array_name[x] +" " + output_file_path + ";"])
 
 #Sending email out through Blat.ps1 (powershell script)
 for x in xrange(0,len(array_name)):
-	subprocess.call([powershell_path, blat_script +array_email[x] +" " +output_file_path+array_name[x] + file_extension + ";"])
+	subprocess.call([powershell_path, blat_script +array_email[x] +" " +output_file_path +" " +array_name[x] + file_extension + ";"])
