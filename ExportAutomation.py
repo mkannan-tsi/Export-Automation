@@ -1,18 +1,18 @@
-input_file_path = "Sample.csv"
-output_file_path = "C:/abc' '2/" #Ouput file path must exist
+import subprocess
+import csv
+
+input_file = "Sample.csv"
+output_file_path = "C:/abc' '2/"
 powershell_path = "C:/WINDOWS/system32/WindowsPowerShell/v1.0/powershell.exe"
 server_script = ".\"./Server.ps1\""
 blat_script = ".\"./blat.ps1\""
 file_extension = ".png"
 
-import subprocess
-import csv
-
 array_name = []
 array_email = []
 
 #Reading from CSV file
-with open(input_file_path, 'rb') as csvfile:
+with open(input_file, 'rb') as csvfile:
     reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
     count = 0
     
