@@ -1,5 +1,5 @@
 # Export-Automation
-
+Enabling automation of sending user-filtered visualizations as images to individual user's email IDs.
 
 1.	Download Python and Blat.
  
