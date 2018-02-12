@@ -17,7 +17,7 @@ C:\Program Files\Tableau\Tableau Server\10.1\extras\Command Line Utility  (if yo
  
 6.	Run Powershell as administrator and enter the following: Set-ExecutionPolicy Bypass
 
-7.	Open Command Line, and enter the following (without *): Blat -install *your SMTP Server* *your email id*  [5[<port>]]
+7.	Open Command Line, and enter the following: Blat -install your-SMTP-Server your-email-id  [5[<port>]]
  
 8.	Open the script that says ‘Server.ps1’, and enter the following –
 a.	Tableau Server address (https:\\online.tableau.com for Tableau Online)
